@@ -7,7 +7,7 @@
   <arg name="enable_ground_truth" default="true" />
   <arg name="enable_state_estimator" default="false" />
   <arg name="log_file" default="$(arg mav_name)" />
-  <arg name="paused" value="true"/>
+  <arg name="paused" value="false"/>
   <arg name="debug" default="false"/>
   <arg name="gui" default="true"/>
   <!-- The following line causes gzmsg and gzerr messages to be printed to the console
