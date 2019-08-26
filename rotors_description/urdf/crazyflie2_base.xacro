@@ -22,6 +22,8 @@
   <xacro:include filename="$(find rotors_description)/urdf/component_snippets.xacro" />
   <!-- Instantiate crazyflie2 "mechanics" -->
   <xacro:include filename="$(find rotors_description)/urdf/crazyflie2.xacro" />
+  <!-- To call file containing information about whycon_marker base's description -->
+  <xacro:include filename="$(find rotors_description)/urdf/whycon_marker_file.xacro"/>
 
   <!-- Instantiate a controller. -->
   <xacro:controller_plugin_macro namespace="${namespace}" imu_sub_topic="imu" />
@@ -52,6 +54,8 @@
       bag_file="$(arg log_file)"
       rotor_velocity_slowdown_sim="${rotor_velocity_slowdown_sim}" />
   </xacro:if>
+  <!-- To mount a whycon_marker base -->
+  <xacro:whycon_marker namespace="${namespace}" marker="whycon_marker" marker_width="0.001" marker_radius="0.025"/>
 
 </robot>
 
