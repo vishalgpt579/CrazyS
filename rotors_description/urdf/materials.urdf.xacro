@@ -1,6 +1,12 @@
 <?xml version="1.0"?>
 <robot name="crazyflie2" xmlns:xacro="http://ros.org/wiki/xacro">
+	<material name="elichi">
+		<color rgba="0.0 0.8 0.1 0.1"/>
+	</material>
 	<material name="whycon_marker_image">
-		<texture filename="package://rotors_description/materials/texture/whycon.png" />
+		<texture filename="/home/fayyu/test_ws/src/CrazyS/rotors_description/materials/texture/whycon.png" />
+	</material>
+	<material name="orange">
+		<color rgba="${255/255} ${108/255} ${10/255} 1.0"/>
 	</material>
 </robot>

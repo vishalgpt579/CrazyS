@@ -57,5 +57,8 @@
   <!-- To mount a whycon_marker base -->
   <xacro:whycon_marker namespace="${namespace}" marker="whycon_marker" marker_width="0.001" marker_radius="0.025"/>
 
+<!--   <xacro:camera_macro namespace="${namespace}" parent_link="world" camera_suffix="overhead" frame_rate="30" horizontal_fov="" image_width image_height image_format min_distance
+      max_distance noise_mean noise_stddev enable_visual *geometry *origin/> -->
+
 </robot>
 

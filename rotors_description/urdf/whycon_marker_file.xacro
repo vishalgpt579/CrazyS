@@ -1,5 +1,23 @@
 <?xml version="1.0"?>
 <robot name="crazyflie2" xmlns:xacro="http://ros.org/wiki/xacro">
+	<material name="Black">
+		<color rgba="0.0 0.0 0.0 1.0"/>
+	</material>
+	<material name="Red">
+		<color rgba="0.8 0.0 0.0 1.0"/>
+	</material>
+	<material name="Green">
+		<color rgba="0.0 0.8 0.0 1.0"/>
+	</material>
+	<material name="White">
+		<color rgba="1.0 1.0 1.0 1.0"/>
+	</material>
+	<material name="Blue">
+		<color rgba="0.0 0.0 0.8 1.0"/>
+	</material>
+	
+	--&gt;
+	<!-- <xacro:include filename="$(find rotors_description)/urdf/materials.urdf.xacro"/> -->
 	<xacro:macro name="whycon_marker" params="namespace marker_width marker_radius marker">
 		<joint name="${marker}_joint" type="fixed">
 			<origin xyz="0 0 0.035" rpy="0 0 0"/>
@@ -7,27 +25,47 @@
 			<child link="${marker}_link"/>
 		</joint>
 		<link name="${marker}_link">
-			<!-- <inertial> -->
-			<!-- <mass value="0.0025"/> -->
+			<inertial>
+			<mass value="0.001"/>
 				<!-- <inertia ixx="0.00000801" ixy="0.0" ixz="0.0"
 				iyy="0.00000801" iyz="0.0"
 				izz="0.000016"/> -->
-<!-- 				<inertia ixx="0.000000391" ixy="0.0" ixz="0.0"
-				iyy="0.000000391" iyz="0.0"
-				izz="0.000000781"/> -->
-				<!-- </inertial> -->
-				<visual>
-					<origin xyz="0 0 0" rpy="0 0 0"/>
+				<inertia ixx="1.5633333e-7" ixy="0.0" ixz="0.0"
+				iyy="1.5633333e-7" iyz="0.0"
+				izz="3.125e-7"/>
+				</inertial>
+				<visual name='Marker0'>
+					<origin xyz="-0.01838 0 0" rpy="0 1.570796327 0"/>
 					<geometry>
-						<cylinder length="${marker_width}" radius="${marker_radius}"/>
+						<!-- <cylinder length="${marker_width}" radius="${marker_radius}"/> -->
+						<!-- <box size="${marker_radius} ${marker_radius} ${marker_width}"/> -->
+						<mesh filename="model://marker0/meshes/Marker0.dae" scale="0.25 0.075 0.075" />
+						<!-- <mesh filename="package://rotors_description/models/marker0/meshes/Marker1.dae" scale="0.25 0.075 0.075"/> -->
+							<!-- <uri>model://marker0/meshes/Marker0.dae</uri> -->
+
 					</geometry>
-				<material name="whycon_marker_image" scale="0.5 0.5"/>
+					<!-- <material name="WhyconMarkerTexture"/> -->
+					<!-- <material>
+						<texture filename="package://rotors_description/models/Marker0/meshes/Marker0.dae"/>
+					</material> -->
+					<!-- <material name="Marker1_png"> -->
+						<!-- <script> -->
+							<!-- <uri>models://marker0/materials/scripts/whycon_marker.material</uri> -->
+							<!-- <name>Gazebo/WhyconMarkerTexture</name> -->
+							<!-- <texture filename="package://rotors_description/models/marker0/meshes/Marker0.dae" /> -->
+						<!-- </script> -->
+					<!-- </material> -->
 				</visual>
 				<collision>
 					<geometry>
-						<cylinder length="${marker_width}" radius="${marker_radius}"/>
+						<!-- <cylinder length="${marker_width}" radius="${marker_radius}"/> -->
+						<box size="${marker_radius} ${marker_radius} ${marker_width}"/>
 					</geometry>
 				</collision>
 			</link>
+			<!-- <gazebo reference="${marker}_link"> -->
+				<!-- <material>Gazebo/Marker1_png</material> -->
+				<!-- <material>Gazebo/WhyconMarkerTexture</material>
+			</gazebo> -->
 		</xacro:macro>
 	</robot>
