@@ -98,7 +98,7 @@
         <visual name='visual'>
           <geometry>
             <box>
-              <size>0.1 0.1 0.1</size>
+              <size>0.01 0.01 0.01</size>
             </box>
           </geometry>
         </visual>
@@ -106,8 +106,8 @@
           <camera name='__default__'>
             <horizontal_fov>1.047</horizontal_fov>
             <image>
-              <width>320</width>
-              <height>240</height>
+              <width>640</width>
+              <height>480</height>
             </image>
             <clip>
               <near>0.1</near>
@@ -129,7 +129,7 @@
         <self_collide>0</self_collide>
         <kinematic>0</kinematic>
       </link>
-      <joint name='camera_link' type='revolute'>
+      <joint name='camera_link' type='fixed'>
         <child>link</child>
         <parent>ground</parent>
         <pose frame=''>0 0 0 0 -0 0</pose>

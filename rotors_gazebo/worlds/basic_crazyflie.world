@@ -1,4 +1,3 @@
-<?xml version="1.0" ?>
 <sdf version="1.4">
 	<world name="default">
 
@@ -96,14 +95,14 @@
 				</visual>
 				<sensor name='camera' type='camera'>
 					<camera name='overhead_cam'>
-						<horizontal_fov>1.047</horizontal_fov>
+						<horizontal_fov>0.547</horizontal_fov>
 						<image>
-							<width>1280</width>
-							<height>1080</height>
+							<width>640</width>
+							<height>480</height>
 						</image>
 						<clip>
 							<near>0.1</near>
-							<far>100</far>
+							<far>200</far>
 						</clip>
 
 					</camera>

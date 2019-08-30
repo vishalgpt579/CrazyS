@@ -9,7 +9,7 @@
   <arg name="log_file" default="$(arg mav_name)" />
   <arg name="paused" value="false"/>
   <arg name="debug" default="false"/>
-  <arg name="gui" default="true"/>
+  <arg name="gui" default="false"/>
   <!-- The following line causes gzmsg and gzerr messages to be printed to the console
       (even when Gazebo is started through roslaunch) -->
   <arg name="verbose" default="false"/>
@@ -35,7 +35,7 @@
       <arg name="enable_logging" value="$(arg enable_logging)" />
       <arg name="enable_ground_truth" value="$(arg enable_ground_truth)" />
       <arg name="enable_state_estimator" value="$(arg enable_state_estimator)" />
-      <arg name="log_file" value="$(arg log_file)"/>
+      <!-- <arg name="log_file" value="$(arg log_file)"/> -->
     </include>
    <!-- The Crazyflie position controller -->
    <node name="position_controller_node" pkg="rotors_control" type="position_controller_node" output="screen">
@@ -51,8 +51,6 @@
        <remap from="odometry" to="odometry_sensor1/odometry" />
    </node>
    <!-- The following lines start the real-time graphics on the Crazyflie's position and orientation -->
-   <node name="position_plot" pkg="rqt_plot" type="rqt_plot" args="--clear-config /$(arg mav_name)/odometry_sensor1/odometry/pose/pose/position" output="screen" />
-   <node name="orientation_plot" pkg="rqt_plot" type="rqt_plot" args="--clear-config /$(arg mav_name)/orientation_rpy" output="screen" />
 
   </group>
 </launch>
