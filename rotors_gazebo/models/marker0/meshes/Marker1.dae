@@ -12,7 +12,8 @@
   </asset>
   <library_images>
     <image id="Marker1_png" name="Marker1_png">
-      <init_from>../materials/textures/Marker1.png</init_from>
+      <init_from>../materials/textures/new_marker.png</init_from>
+      <!-- <init_from>./../Marker1.png</init_from> -->
     </image>
   </library_images>
   <library_effects>

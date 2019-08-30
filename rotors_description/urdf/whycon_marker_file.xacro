@@ -26,22 +26,20 @@
 		</joint>
 		<link name="${marker}_link">
 			<inertial>
-			<mass value="0.001"/>
-				<!-- <inertia ixx="0.00000801" ixy="0.0" ixz="0.0"
-				iyy="0.00000801" iyz="0.0"
-				izz="0.000016"/> -->
+				<mass value="0.001"/>
 				<inertia ixx="1.5633333e-7" ixy="0.0" ixz="0.0"
-				iyy="1.5633333e-7" iyz="0.0"
-				izz="3.125e-7"/>
+					iyy="1.5633333e-7" iyz="0.0"
+					izz="3.125e-7"/>
 				</inertial>
 				<visual name='Marker0'>
 					<origin xyz="-0.01838 0 0" rpy="0 1.570796327 0"/>
 					<geometry>
 						<!-- <cylinder length="${marker_width}" radius="${marker_radius}"/> -->
 						<!-- <box size="${marker_radius} ${marker_radius} ${marker_width}"/> -->
-						<mesh filename="model://marker0/meshes/Marker0.dae" scale="0.25 0.075 0.075" />
+						<!-- <mesh filename="model://marker0/meshes/Marker0.dae" scale="0.25 0.075 0.075" /> -->
 						<!-- <mesh filename="package://rotors_description/models/marker0/meshes/Marker1.dae" scale="0.25 0.075 0.075"/> -->
-							<!-- <uri>model://marker0/meshes/Marker0.dae</uri> -->
+						<mesh filename="package://rotors_gazebo/models/marker0/meshes/Marker1.dae" scale="0.25 0.075 0.075"/>
+						<!-- <uri>model://marker0/meshes/Marker0.dae</uri> -->
 
 					</geometry>
 					<!-- <material name="WhyconMarkerTexture"/> -->
@@ -49,11 +47,11 @@
 						<texture filename="package://rotors_description/models/Marker0/meshes/Marker0.dae"/>
 					</material> -->
 					<!-- <material name="Marker1_png"> -->
-						<!-- <script> -->
-							<!-- <uri>models://marker0/materials/scripts/whycon_marker.material</uri> -->
-							<!-- <name>Gazebo/WhyconMarkerTexture</name> -->
-							<!-- <texture filename="package://rotors_description/models/marker0/meshes/Marker0.dae" /> -->
-						<!-- </script> -->
+					<!-- <script> -->
+					<!-- <uri>models://marker0/materials/scripts/whycon_marker.material</uri> -->
+					<!-- <name>Gazebo/WhyconMarkerTexture</name> -->
+					<!-- <texture filename="package://rotors_description/models/marker0/meshes/Marker0.dae" /> -->
+					<!-- </script> -->
 					<!-- </material> -->
 				</visual>
 				<collision>

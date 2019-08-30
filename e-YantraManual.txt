@@ -1,0 +1,33 @@
+Quick understanding of this package
+
+launch crazyflie2_hovering_example.launch file
+
+	$ roslaunch rotors_gazebo crazyflie2_hovering_example.launch
+
+		Note : This file ... 
+			Creates a world, named "basic_crazyflie2.world" which includes..
+
+				light (sun)
+				ground plane
+					link	:
+								Overhead camera:	resolution	-	1280x1080
+													plugin		-	libgazebo_ros_camera 
+													height 		-	8 feet
+
+			Call a separate launch files:
+				spawn_mav_crazyflie.launch
+
+					Calls "crazyflie2_base.xacro"
+						This xacro file forms a base to all the add-on on the drone, by including..
+							Generic add-on macros, "component_snippets.xacro"; [note: naming the used ones only]
+								IMU sensor
+								bag_plugin_macro 
+								controller_plugin_macro
+								crazyflie2_odometry
+								whycon_marker
+
+					Creates the whole drone's model
+						using "multirotor_base_macro" for creating all rotors physical structure.
+
+
+			Creates a PID control node , named "position_controller_node"
